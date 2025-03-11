@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import Hero from "@/components/Hero";
 import { useRouter } from "next/navigation";
+import UploadData from "@/components/UploadData";
 
 const page = () => {
   const router = useRouter();
@@ -14,7 +14,7 @@ const page = () => {
 
   return (
     <>
-      <Hero />
+      <UploadData />
     </>
   );
 };

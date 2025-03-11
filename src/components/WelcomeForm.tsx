@@ -43,10 +43,10 @@ const WelcomeForm = () => {
   }, []);
 
   return (
-    <div className="max-w-[1172px] px-4 mx-auto">
-      <div className="flex flex-col relative justify-center items-center min-h-screen">
+    <div className="max-w-[1172px] px-4 mx-auto py-20">
+      <div className="flex flex-col relative justify-center items-center">
         <h1 className="text-4xl max-sm:text-3xl text-center leading-[100%] pb-5">
-          Login Page
+          Welcome form
         </h1>
         <form noValidate className="rounded-md w-full max-w-[400px]">
           <div className="mb-4">
