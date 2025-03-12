@@ -2,12 +2,31 @@
 import { ArrowIcon } from "@/utils/icons";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+  const homePage = usePathname() === "/";
+  const dashboardSection = usePathname() === "/dashboard";
+  const [user, setUser] = useState({ firstName: "", lastName: "" });
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("formData");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setUser({
+        firstName: parsedData.firstName,
+        lastName: parsedData.lastName,
+      });
+    }
+  }, []);
   return (
-    <div className="max-w-[1172px] mx-auto px-4">
-      <div className="py-[19.19px] flex items-center justify-between max-sm:py-4">
+    <div
+      className={`py-[19.19px] max-sm:py-4 ${
+        dashboardSection && "bg-custom-cream"
+      }`}
+    >
+      <div className="max-w-[1172px] mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-[10px]">
           <Link href={"/"}>
             <Image
@@ -23,23 +42,32 @@ const Header = () => {
             TMM Accelerator
           </p>
         </div>
-        <div className="flex items-center gap-[7px]">
+        <div className="flex cursor-pointer items-center gap-[7px]">
           <Image
-            src="/assets/images/webp/user-profile.webp"
+            src={
+              dashboardSection
+                ? "/assets/images/webp/user-profile.webp"
+                : "/assets/images/webp/user-profile.webp"
+            }
             width={40}
             height={40}
-            alt="useer-profile"
+            alt="user-profile"
             className="pointer-events-none"
           />
-          <div className="flex items-center gap-[13px]">
-            <div className="flex flex-col">
-              <p className="font-medium leading-[100%]">Jhon doe</p>
-              <p className="font-inter text-sm leading-[100%] opacity-70 pt-[1px]">
-                Admin
+          {!homePage ? (
+            <div className="flex flex-col gap-[1px]">
+              <p className="font-medium max-md:text-sm leading-[100%]">
+                {user.firstName} {user.lastName}
               </p>
+              <p className="text-sm text-black opacity-70 font-inter">Admin</p>
             </div>
-            <ArrowIcon />
-          </div>
+          ) : (
+            <div className="flex flex-col gap-[1px]">
+              <p className="font-medium max-md:text-sm leading-[100%]">Jhon doe</p>
+              <p className="text-sm text-black opacity-70 font-inter">Admin</p>
+            </div>
+          )}
+          {!homePage && <ArrowIcon />}
         </div>
       </div>
     </div>
