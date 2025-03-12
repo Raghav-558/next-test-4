@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import UploadData from "@/components/UploadData";
+import Header from "@/components/common/Header";
 
 const page = () => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const page = () => {
 
   return (
     <>
+      <Header/>
       <UploadData />
     </>
   );

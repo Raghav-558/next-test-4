@@ -30,29 +30,31 @@ const DetailedMetrices = () => {
                   { scroll: false }
                 );
               }}
-              className={`w-full bg-white flex rounded-lg cursor-pointer border border-solid items-center text-sm justify-between py-3 px-4 ${
+              className={`flex items-center justify-between bg-white rounded-lg border border-solid text-sm w-full cursor-pointer py-[11px] px-4 ${
                 card === obj.title.toLowerCase().replaceAll(" ", "-")
                   ? "border-custom-red"
                   : "border-transparent"
               }`}
             >
               <div className="flex items-center gap-4">
-                <div className="size-[40px] bg-custom-off-white flex items-center justify-center rounded-full font-medium text-2xl leading-[100%]">
+                <div className="size-[40px] flex items-center justify-center bg-custom-off-white rounded-full font-medium text-2xl leading-[100%]">
                   {obj.number}
                 </div>
-                <p>{obj.title}</p>
+                <p className="font-inter text-sm leading-[100%]">{obj.title}</p>
               </div>
               <RightArrowIcon />
             </button>
           ))}
         </div>
-        <Image
-          src={"/assets/images/webp/circle-data.webp"}
-          width={558}
-          height={464}
-          alt="circle-data-image"
-          className="pointer-enents-none"
-        />
+        <div className="max-w-[558px] w-full h-full bg-white rounded-lg">
+          <Image
+            src={"/assets/images/webp/circle-data.webp"}
+            width={558}
+            height={464}
+            alt="circle-data-image"
+            className="!pointer-enents-none"
+          />
+        </div>
       </div>
     </div>
   );

@@ -12,8 +12,7 @@ const WelcomeForm = () => {
 
   const [formData, setFormData] = useState(formValues);
   const [error, setError] = useState(false);
-  const emailRegax =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const emailRegax =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,45 +49,16 @@ const WelcomeForm = () => {
         </h1>
         <form noValidate className="rounded-md w-full max-w-[400px]">
           <div className="mb-4">
-            <label
-              className="block text-lg max-md:text-base pb-2 max-md:pb-1"
-              htmlFor="firstName"
-            >
+            <label className="block text-lg max-md:text-base pb-2 max-md:pb-1" htmlFor="firstName">
               First Name
             </label>
-            <input
-              onChange={(e) =>
-                setFormData({ ...formData, firstName: e.target.value })
-              }
-              type="text"
-              id="firstName"
-              placeholder="First name"
-              className="border-2 border-black outline-none rounded-md w-full py-2 px-3"
-            />
-            {error && formData.firstName.length === 0 && (
-              <p className="text-red-500 pt-1 pl-1">First name is required</p>
-            )}
+            <input onChange={(e) => setFormData({ ...formData, firstName: e.target.value })} type="text" id="firstName" placeholder="First name" className="border-2 border-black outline-none rounded-md w-full py-2 px-3"/>
+            {error && formData.firstName.length === 0 && ( <p className="text-red-500 pt-1 pl-1">First name is required</p> )}
           </div>
           <div className="mb-4">
-            <label
-              className="block text-lg max-md:text-base pb-2 max-md:pb-1"
-              htmlFor="lastName"
-            >
-              Last Name
-            </label>
-            <input
-              onChange={(e) =>
-                setFormData({ ...formData, lastName: e.target.value })
-              }
-              type="text"
-              id="lastName"
-              placeholder="Last name"
-              className="border-2 border-black outline-none rounded-md w-full py-2 px-3"
-            />
-            {error && formData.lastName.length === 0 && (
-              <p className="text-red-500 pt-1 pl-1">Last name is required</p>
-            )}
-          </div>
+            <label className="block text-lg max-md:text-base pb-2 max-md:pb-1" htmlFor="lastName">Last Name</label>
+            <input onChange={(e) => setFormData({ ...formData, lastName: e.target.value })} type="text" id="lastName" placeholder="Last name" className="border-2 border-black outline-none rounded-md w-full py-2 px-3"/>
+            {error && formData.lastName.length === 0 && (<p className="text-red-500 pt-1 pl-1">Last name is required</p> )} </div>
           <div className="mb-4">
             <label
               className="block text-lg max-md:text-base pb-2 max-md:pb-1"

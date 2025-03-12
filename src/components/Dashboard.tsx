@@ -34,7 +34,7 @@ const Dashboard = () => {
               <div className="w-1/2 px-3 max-sm:px-1 max-lg:w-full max-lg:mb-6 max-sm:mb-2">
                 <div className="bg-white flex justify-between items-center py-[19px] px-4 max-lg:py-3 max-lg:px-2 rounded-lg">
                   <div className="flex items-center gap-4 max-md:gap-1">
-                    <div className="size-[60px] rounded-full flex items-center justify-center bg-custom-off-white">
+                    <div className="size-[60px] max-lg:size-[50px] rounded-full flex items-center justify-center bg-custom-off-white">
                       <HighComplexityIcon />
                     </div>
                     <p className="font-medium text-xl max-sm:text-base leading-[100%]">
@@ -47,8 +47,8 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="w-3/12 px-3 max-sm:px-1 max-lg:w-1/2 max-sm:!w-full">
-                <div className="bg-white flex gap-4 max-md:gap-2 items-center py-[19px] px-4 max-lg:py-2 max-lg:px-2 max-sm:pl-1 rounded-lg">
-                  <div className="size-[60px] bg-custom-off-white flex items-center justify-center rounded-full">
+                <div className="bg-white flex gap-4 max-md:gap-2 items-center py-[19px] px-4 max-lg:py-3 max-lg:px-2 max-sm:pl-1 rounded-lg">
+                  <div className="size-[60px] max-lg:size-[50px] bg-custom-off-white flex items-center justify-center rounded-full">
                     <MachinesIcon />
                   </div>
                   <div>
@@ -62,15 +62,15 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="w-3/12 px-3 max-sm:px-1 max-lg:w-1/2 max-sm:!w-full max-sm:pt-2">
-                <div className="bg-white flex gap-4 max-md:gap-2 items-center py-[19px] px-4 max-lg:py-2 max-lg:px-2 max-sm:pl-1 rounded-lg">
-                  <div className="size-[60px]  bg-custom-off-white flex items-center justify-center rounded-full">
+                <div className="bg-white flex gap-4 max-md:gap-2 items-center py-[19px] px-4 max-lg:py-3 max-lg:px-2 max-sm:pl-1 rounded-lg">
+                  <div className="size-[60px] max-lg:size-[50px] bg-custom-off-white flex items-center justify-center rounded-full">
                     <PairsIcon />
                   </div>
                   <div>
                     <span className="font-medium text-[28px] leading-[100%]">
                       -
                     </span>
-                    <p className="font-inte text-sm leading-[100%] tracking-[-1%]">
+                    <p className="font-inter text-sm leading-[100%] tracking-[-1%]">
                       No of Pairs
                     </p>
                   </div>

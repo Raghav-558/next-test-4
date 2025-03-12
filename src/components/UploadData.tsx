@@ -11,24 +11,34 @@ const UploadData = () => {
   const [fileName, setFileName] = useState("");
   const [uploadCount, setUploadCount] = useState(0);
 
-  const upLoadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const fileName = e.target.files?.[0].name ?? "";
-    setFileName(fileName);
-    localStorage.setItem("fileName", fileName);
-    setDataUploaded(true);
-  };
-
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const file = e.dataTransfer.files[0];
-    if (file) {
-      const fileName = file.name;
-      setFileName(fileName);
-      localStorage.setItem("fileName", fileName);
-      setDataUploaded(true);
-    }
-  };
+   const upLoadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+     const file = e.target.files?.[0];
+     if (file && file.type.startsWith("image/")) {
+       const fileName = file.name;
+       const objectUrl = URL.createObjectURL(file);
+       localStorage.setItem("fileName", fileName);
+       localStorage.setItem("profileImage", objectUrl);
+       console.log("File Name:", fileName);
+       setFileName(fileName);
+       setDataUploaded(true);
+     } else {
+       alert("Please upload a valid image file.");
+     }
+   };
+ const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+   e.preventDefault();
+   const file = e.dataTransfer.files?.[0];
+   if (file && file.type.startsWith("image/")) {
+     const fileName = file.name;
+     const objectUrl = URL.createObjectURL(file);
+     setFileName(fileName);
+     localStorage.setItem("fileName", fileName);
+     localStorage.setItem("profileImage", objectUrl);
+     setDataUploaded(true);
+   } else {
+     alert("Please upload a valid image file.");
+   }
+ };
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();

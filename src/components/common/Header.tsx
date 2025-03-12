@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
-  const homePage = usePathname() === "/";
+  const mainPage = usePathname() === "/";
   const dashboardSection = usePathname() === "/dashboard";
   const [user, setUser] = useState({ firstName: "", lastName: "" });
+  const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
     const storedData = localStorage.getItem("formData");
@@ -19,7 +20,13 @@ const Header = () => {
         lastName: parsedData.lastName,
       });
     }
+
+    const storedImage = localStorage.getItem("profileImage");
+    if (storedImage) {
+      setProfileImage(storedImage);
+    }
   }, []);
+
   return (
     <div
       className={`py-[19.19px] max-sm:py-4 ${
@@ -44,17 +51,18 @@ const Header = () => {
         </div>
         <div className="flex cursor-pointer items-center gap-[7px]">
           <Image
-            src={
-              dashboardSection
-                ? "/assets/images/webp/user-profile.webp"
+             src={
+              dashboardSection && profileImage
+                ? profileImage
                 : "/assets/images/webp/user-profile.webp"
             }
+            unoptimized
             width={40}
             height={40}
             alt="user-profile"
-            className="pointer-events-none"
+            className="pointer-events-none rounded-full size-10"
           />
-          {!homePage ? (
+          {!mainPage ? (
             <div className="flex flex-col gap-[1px]">
               <p className="font-medium max-md:text-sm leading-[100%]">
                 {user.firstName} {user.lastName}
@@ -63,11 +71,13 @@ const Header = () => {
             </div>
           ) : (
             <div className="flex flex-col gap-[1px]">
-              <p className="font-medium max-md:text-sm leading-[100%]">Jhon doe</p>
+              <p className="font-medium max-md:text-sm leading-[100%]">
+                Jhon doe
+              </p>
               <p className="text-sm text-black opacity-70 font-inter">Admin</p>
             </div>
           )}
-          {!homePage && <ArrowIcon />}
+          <ArrowIcon />
         </div>
       </div>
     </div>
