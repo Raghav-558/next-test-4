@@ -24,13 +24,11 @@ const DetailedMetrices = () => {
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 router.push(
-                  `/dashboard?card=${obj.title
-                    .toLowerCase()
-                    .replaceAll(" ", "-")}`,
+                  `/dashboard?card=${obj.title.toLowerCase().replaceAll(" ", "-")}`,
                   { scroll: false }
                 );
               }}
-              className={`flex items-center justify-between bg-white rounded-lg border border-solid text-sm w-full cursor-pointer py-[11px] px-4 ${
+              className={`flex items-center justify-between bg-white rounded-lg border border-solid text-sm w-full py-[11px] px-4 cursor-pointer ${
                 card === obj.title.toLowerCase().replaceAll(" ", "-")
                   ? "border-custom-red"
                   : "border-transparent"
@@ -46,15 +44,13 @@ const DetailedMetrices = () => {
             </button>
           ))}
         </div>
-        <div className="max-w-[558px] w-full h-full bg-white rounded-lg">
-          <Image
-            src={"/assets/images/webp/circle-data.webp"}
-            width={558}
-            height={464}
-            alt="circle-data-image"
-            className="!pointer-enents-none"
-          />
-        </div>
+        <Image
+          src={"/assets/images/webp/circle-data.webp"}
+          width={558}
+          height={464}
+          alt="circle-data-image"
+          className="!pointer-enents-none"
+        />
       </div>
     </div>
   );

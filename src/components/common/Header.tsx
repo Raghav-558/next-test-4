@@ -41,7 +41,7 @@ const Header = () => {
               width={144}
               height={39}
               alt="Page-Logo"
-              className="pointer-events-none"
+              className="pointer-events-none max-sm:w-[125px]"
             />
           </Link>
           <div className="border-[1.5px] h-[19px] max-sm:hidden"></div>
