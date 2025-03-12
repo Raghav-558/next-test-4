@@ -90,7 +90,7 @@ const WelcomeForm = () => {
           </div>
           <button
             onClick={handleSubmit}
-            className="w-full mt-2 md:mt-4 border-2 border-green-600 font-medium text-lg max-md:text-base bg-green-400 py-2 px-3 rounded-md hover:bg-green-600 hover:text-white transition-all duration-300"
+            className="w-full mt-2 md:mt-4 border-2 border-gray-600 font-medium text-lg max-md:text-base bg-gray-400 py-2 px-3 rounded-md hover:bg-gray-600 hover:text-white transition-all duration-300 cursor-pointer"
           >
             Submit
           </button>

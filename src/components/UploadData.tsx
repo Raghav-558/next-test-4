@@ -73,8 +73,20 @@ const UploadData = () => {
 
   return (
     <div className="relative">
-      <Image src={"/assets/images/webp/left-vector.webp"} width={169.25} height={211} alt="left-vector" className="pointer-events-none absolute left-0 top-[80px]" />
-      <Image src={"/assets/images/webp/right-vector.webp"} width={169.25} height={211} alt="right-vector" className="pointer-events-none right-0 absolute bottom-[45px]" />
+      <Image
+        src={"/assets/images/webp/left-vector.webp"}
+        width={169.25}
+        height={211}
+        alt="left-vector"
+        className="pointer-events-none absolute left-0 top-[80px]"
+      />
+      <Image
+        src={"/assets/images/webp/right-vector.webp"}
+        width={169.25}
+        height={211}
+        alt="right-vector"
+        className="pointer-events-none right-0 absolute bottom-[45px]"
+      />
       <div className="pt-9 pb-[69px] max-md:py-10">
         <div className="max-w-[1172px] px-4 mx-auto">
           <h2 className="font-semibold text-center max-lg:text-3xl text-[32px] max-md:text-2xl max-sm:text-xl pb-[34px] leading-[100%] text-custom-gray">
@@ -101,7 +113,7 @@ const UploadData = () => {
                             WAR, ZIP or EAR, file size no more than 10MB
                           </p>
                         </div>
-                        <div className="flex justify-center items-center size-8 rounded-sm bg-custom-red">
+                        <div className="flex justify-center items-center size-8 rounded-sm bg-custom-red cursor-pointer">
                           <PlusIcon />
                         </div>
                       </div>
@@ -126,7 +138,7 @@ const UploadData = () => {
                         <div className="w-full h-[3px] rounded-sm">
                           <div
                             className="bg-custom-red w-0 transition-all duration-300 h-full"
-                            style={{ width: `${uploadCount}%` }}
+                            style={{width: `${uploadCount}%`}}
                           ></div>
                         </div>
                       </div>

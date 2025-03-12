@@ -25,7 +25,7 @@ const Dashboard = () => {
               </p>
               <button
                 onClick={() => router.push("/uploadImage")}
-                className="font-medium leading-[100%] text-sm border border-custom-gray border-opacity-50 h-[49px] w-[193px] max-sm:w-[170px] rounded-[6px] uppercase tracking-[-1%] hover:bg-gray-200 transition-all duration-300"
+                className="font-medium leading-[100%] text-sm border border-custom-gray border-opacity-50 h-[49px] w-[193px] max-sm:w-[170px] rounded-[6px] uppercase tracking-[-1%] hover:bg-gray-200 transition-all duration-300 cursor-pointer"
               >
                 Upload more files
               </button>

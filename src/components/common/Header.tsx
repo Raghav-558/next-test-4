@@ -36,13 +36,7 @@ const Header = () => {
       <div className="max-w-[1172px] mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-[10px]">
           <Link href={"/"}>
-            <Image
-              src="/assets/images/webp/page-logo.webp"
-              width={144}
-              height={39}
-              alt="Page-Logo"
-              className="pointer-events-none max-sm:w-[125px]"
-            />
+            <Image src="/assets/images/webp/page-logo.webp" width={144} height={39} alt="Page-Logo" className="pointer-events-none max-sm:w-[125px]" />
           </Link>
           <div className="border-[1.5px] h-[19px] max-sm:hidden"></div>
           <p className="font-medium leading-[100%] pt-0.5 whitespace-nowrap max-sm:hidden">
@@ -50,12 +44,7 @@ const Header = () => {
           </p>
         </div>
         <div className="flex cursor-pointer items-center gap-[7px]">
-          <Image
-             src={
-              dashboardSection && profileImage
-                ? profileImage
-                : "/assets/images/webp/user-profile.webp"
-            }
+          <Image src={dashboardSection && profileImage ? profileImage : "/assets/images/webp/user-profile.webp"}
             unoptimized
             width={40}
             height={40}
